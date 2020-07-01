@@ -190,7 +190,7 @@ jobs:
         df -h
         cd lede
         make download -j8
-        find ./lede/dl/ -size -1024c -exec rm -f {} \;
+        find ./dl/ -size -1024c -exec rm -f {} \;
         df -h
      - name: Compile Openwrt
        run: |
