@@ -39,7 +39,7 @@ jobs:
         sudo rm -rf "/usr/local/share/boost"
         sudo rm -rf "$AGENT_TOOLSDIRECTORY"
         df -h
-     - name: Prepare Mixedwrt
+     - name: Prepare openwrt
        run: |
         sudo chown -R runner:runner /home/runner/work/OnkeyOpenwrt
         cp -r ./SCRIPTS/. ./
@@ -49,7 +49,6 @@ jobs:
         cd lede
         cp -r ../SCRIPTS/. ./
         /bin/bash 02_update_package.sh
-        ./scripts/feeds install -a
         chmod -R 755 ./
         df -h
      - name: Generate configuration file
@@ -202,10 +201,12 @@ jobs:
         echo "======================="
         df -h
         echo "======================="
+        cd  bin/targets/x86/64
+        rm -rf `ls | grep -v "squashfs"`
         du -h --max-depth=1 ./ --exclude=build_dir --exclude=bin
         du -h --max-depth=1 ./build_dir
         du -h --max-depth=1 ./bin
-        
+
      - name: Prepare artifact
        run: find ./lede/bin/targets/ -type d -name "packages" | xargs rm -rf {}
         
