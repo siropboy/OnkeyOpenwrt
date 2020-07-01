@@ -114,10 +114,10 @@ jobs:
         # CONFIG_VMDK_IMAGES is not set
         EOF
         # IPv6支持:
-        cat >> .config <<EOF
-        CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-        CONFIG_PACKAGE_ipv6helper=y
-        EOF
+        # cat >> .config <<EOF
+        # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+        # CONFIG_PACKAGE_ipv6helper=y
+        # EOF
         # 多文件系统支持:
         # cat >> .config <<EOF
         # CONFIG_PACKAGE_kmod-fs-nfs=y
@@ -164,12 +164,12 @@ jobs:
         CONFIG_PACKAGE_luci-app-passwall=y
         CONFIG_PACKAGE_luci-app-serverchan=y
         CONFIG_PACKAGE_luci-app-smartdns=y
-        CONFIG_PACKAGE_luci-app-smartinfo=y
+        # CONFIG_PACKAGE_luci-app-smartinfo=y
         CONFIG_PACKAGE_luci-app-syncdial=y
         # CONFIG_PACKAGE_luci-app-vlmcsd is not set
         CONFIG_PACKAGE_luci-app-vssr=y
         # CONFIG_PACKAGE_luci-app-xlnetacc is not set
-        CONFIG_PACKAGE_luci-app-transmission=y
+        # CONFIG_PACKAGE_luci-app-transmission=y
         CONFIG_LUCI_LANG_redsocks2=y
         CONFIG_LUCI_LANG_en=y
         EOF
@@ -196,7 +196,7 @@ jobs:
         df -h
         cd lede
         make download -j8
-        find ./lede/dl/ -size -1024c -exec rm -f {} \;
+        find ./dl/ -size -1024c -exec rm -f {} \;
         df -h
      - name: Compile Openwrt
        run: |
