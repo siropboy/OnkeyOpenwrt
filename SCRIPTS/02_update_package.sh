@@ -42,7 +42,7 @@ sed -i 's/), 5)/), 48)/g' package/new/luci-app-clash/luasrc/controller/clash.lua
 ##passwall
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall package/new/luci-app-passwall
 ##luci-app-vssr
-#svn co https://github.com/jerrykuku/luci-app-vssr/trunk/ package/new/luci-app-vssr
+svn co https://github.com/jerrykuku/luci-app-vssr/trunk/ package/new/luci-app-vssr
 #授予权限
 chmod -R 755 ./
 exit 0
