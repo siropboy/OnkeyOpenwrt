@@ -107,7 +107,7 @@ jobs:
         EOF
         # IPv6支持:
         cat >> .config <<EOF
-        CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+        # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
         CONFIG_PACKAGE_ipv6helper=y
         EOF
         # 多文件系统支持:
@@ -133,7 +133,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-advanced=y
         # CONFIG_PACKAGE_luci-app-airplay2 is not set
         # CONFIG_PACKAGE_luci-app-amule is not set
-        CONFIG_PACKAGE_luci-app-aria2=y
+        # CONFIG_PACKAGE_luci-app-aria2=y
         CONFIG_PACKAGE_luci-app-autopoweroff=y
         CONFIG_PACKAGE_luci-app-clash=y
         CONFIG_PACKAGE_luci-app-control-mia=y
@@ -146,7 +146,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-frpc=y
         CONFIG_PACKAGE_luci-app-hd-idle=y
         CONFIG_PACKAGE_luci-app-koolddns=y
-        CONFIG_PACKAGE_luci-app-minidlna=y
+        # CONFIG_PACKAGE_luci-app-minidlna=y
         # CONFIG_PACKAGE_luci-app-music-remote-center is not set
         # CONFIG_PACKAGE_luci-app-fileassistant=y
         CONFIG_PACKAGE_luci-app-mwan3=y
@@ -154,14 +154,14 @@ jobs:
         CONFIG_PACKAGE_luci-app-openclash=y
         # CONFIG_PACKAGE_luci-app-openvpn-server is not set
         CONFIG_PACKAGE_luci-app-passwall=y
-        CONFIG_PACKAGE_luci-app-serverchan=y
+        # CONFIG_PACKAGE_luci-app-serverchan=y
         CONFIG_PACKAGE_luci-app-smartdns=y
-        CONFIG_PACKAGE_luci-app-smartinfo=y
+        # CONFIG_PACKAGE_luci-app-smartinfo=y
         CONFIG_PACKAGE_luci-app-syncdial=y
         # CONFIG_PACKAGE_luci-app-vlmcsd is not set
         CONFIG_PACKAGE_luci-app-vssr=y
         # CONFIG_PACKAGE_luci-app-xlnetacc is not set
-        CONFIG_PACKAGE_luci-app-transmission=y
+        # CONFIG_PACKAGE_luci-app-transmission=y
         CONFIG_LUCI_LANG_redsocks2=y
         CONFIG_LUCI_LANG_en=y
         EOF
@@ -226,5 +226,5 @@ jobs:
      - name: Upload  IPK
        uses: actions/upload-artifact@master
        with:
-          name: SirpdboyOnekeyOpenWrt-x86-IPK
+          name: SirpdboykeyOpenWrt-x86-IPK
           path: ./lede/bin/packages/
