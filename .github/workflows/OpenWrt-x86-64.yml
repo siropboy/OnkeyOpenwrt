@@ -9,12 +9,16 @@
 name: OpenWrt-x86-64
 
 on:
+  repository_dispatch:
+  release:
+    types: published
 #  push:
-#   paths:
-#     - 'x86'
-#   schedule:
-#     - cron: 0 19 * * *
-#     - cron: 0 8 */3 * *
+#    branches:
+#      - main
+#    paths:
+#      - '5.config'
+  schedule:
+    - cron: 0 22 */2 * * 
   watch:
     types: started
 
