@@ -118,7 +118,6 @@ jobs:
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
-       run: |
           mkdir -p ./mini/firmware
           mkdir -p ./mini/package
           cp -rf $(find ./bin/packages/ -type f -name "*.ipk") ./mini/package
@@ -127,18 +126,18 @@ jobs:
           gzip *.img
     - name: 上传固件
       uses: actions/upload-artifact@main
-           with:
+      with:
            name: SirpdboyOpenWrt-mini-Firmware
            path: ./mini/firmware
     - name: 上传固件IPK
-        uses: actions/upload-artifact@main
-        with:
+      uses: actions/upload-artifact@main
+      with:
           name: SirpdboyOpenWrt-mini-Ipk
           path: ./mini/package
     - name: 固件上传到奶牛快传
       id: cowtransfer
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
-        run: |
+      run: |
          curl -fsSL git.io/file-transfer | sh
          ./transfer cow --block 2621440 -s -p 64 --no-progress ./mini/firmware 2>&1 | tee cowtransfer.log
          echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
