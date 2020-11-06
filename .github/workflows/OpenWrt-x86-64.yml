@@ -76,8 +76,6 @@ jobs:
     - name: 导入自定义
       run: |
         git clone https://github.com/sirpdboy/build openwrt/package/sirpdboy
-        mv openwrt/package/sirpdboy/$CONFIG_FILE $(pwd)
-        mv openwrt/package/sirpdboy/$DIY_SH $(pwd)
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_SH && cd openwrt && ../$DIY_SH
