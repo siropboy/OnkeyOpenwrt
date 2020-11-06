@@ -24,7 +24,7 @@ rm -rf ./package/lean/v2ray
 rm -rf ./package/lean/v2ray-plugin
 rm -rf ./package/lean/luci-app-netdata
 rm -rf ./package/lean/luci-theme-opentomcat
-rm -rf ./package/sirpdboy/autocore
+rm -rf ./openwrt/package/sirpdboy/autocore
 #rm -rf ./package/lean/autocore
 rm -rf ./package/lean/default-settings
 rm -rf ./feeds/packages/utils/ttyd
