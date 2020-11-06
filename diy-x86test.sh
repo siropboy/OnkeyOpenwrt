@@ -8,14 +8,14 @@ svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwa
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/lienol
 sed -i '$a\chdbits.co\n\www.cnscg.club\n\pt.btschool.club\n\et8.org\n\www.nicept.net\n\pthome.net\n\ourbits.club\n\pt.m-team.cc\n\hdsky.me\n\ccfbits.org' ./package/luci-app-passwall/root/usr/share/passwall/rules/direct_host
 sed -i '$a\docker.com\n\docker.io' ./package/luci-app-passwall/root/usr/share/passwall/rules/proxy_host
-sed -i '/global_rules/a	option auto_update 1\n	option week_update 0\n	option time_update 5' ./package/luci-app-passwall/root/etc/config/passwall
-sed -i '/global_subscribe/a	option auto_update_subscribe 1\noption week_update_subscribe 7\noption time_update_subscribe 5' ./package/luci-app-passwall/root/etc/config/passwall
+sed -i '/global_rules/a option auto_update 1\n option week_update 0\n option time_update 5' ./package/luci-app-passwall/root/etc/config/passwall
+sed -i '/global_subscribe/a option auto_update_subscribe 1\noption week_update_subscribe 7\noption time_update_subscribe 5' ./package/luci-app-passwall/root/etc/config/passwall
 
-#rm -rf package/lean/v2ray && svn co https://github.com/xiaorouji/openwrt-package/trunk/package/v2ray			diy/v2ray
-#rm -rf package/lean/v2ray-plugin && svn co https://github.com/xiaorouji/openwrt-package/trunk/package/v2ray-plugin	diy/v2ray-plugin
-#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/ssocks		./package/lienol/ssocks
-#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-plus	./package/lienol/trojan-plus
-#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-go		./package/lienol/trojan-go
+#rm -rf package/lean/v2ray && svn co https://github.com/xiaorouji/openwrt-package/trunk/package/v2ray diy/v2ray
+#rm -rf package/lean/v2ray-plugin && svn co https://github.com/xiaorouji/openwrt-package/trunk/package/v2ray-plugin diy/v2ray-plugin
+#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/ssocks ./package/lienol/ssocks
+#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-plus ./package/lienol/trojan-plus
+#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-go ./package/lienol/trojan-go
 #svn co https://github.com/siropboy/luci-app-vssr-plus/trunk/  package/luci-app-vssr-plus
 
 rm -rf ./package/lean/luci-theme-argon
@@ -24,11 +24,11 @@ rm -rf ./package/lean/v2ray
 rm -rf ./package/lean/v2ray-plugin
 rm -rf ./package/lean/luci-app-netdata
 rm -rf ./package/lean/luci-theme-opentomcat
-rm -rf ./feeds/diy/autocore
+rm -rf ./package/sirpdboy/autocore
 #rm -rf ./package/lean/autocore
 rm -rf ./package/lean/default-settings
-rm -rf feeds/packages/utils/ttyd
-rm -rf package/lean/luci-app-ttyd/root/etc/init.d/ttyd
+rm -rf ./feeds/packages/utils/ttyd
+rm -rf ./package/lean/luci-app-ttyd/root/etc/init.d/ttyd
 sed -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
 sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
 sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
