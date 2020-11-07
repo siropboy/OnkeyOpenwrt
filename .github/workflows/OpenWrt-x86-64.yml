@@ -60,8 +60,10 @@ jobs:
     - name: 下载源码
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-        cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
-
+        cd openwrt 
+        sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+        sed -i 's/coolsnowwolf/sirpdboy/g' ./feeds.conf.default
+        ./scripts/feeds update -a && ./scripts/feeds install -a
     - name: 增加存储
       if: env.FREE_UP_DISK == 'true'
       env:
