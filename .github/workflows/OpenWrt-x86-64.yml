@@ -112,7 +112,7 @@ jobs:
       run: |
           mkdir -p ./mini/firmware
           mkdir -p ./mini/package
-          cp -rf $(find ./openwrt/packages/ -type f -name "*.ipk") ./mini/package
+          cp -rf $(find ./openwrt/bin/packages/ -type f -name "*.ipk") ./mini/package
           find ./openwrt/bin/targets/ -name "*combined*img*" | xargs -i mv -f {} ./mini/firmware
           cd ./openwrt/mini/firmware
           gzip *.img
