@@ -1,12 +1,12 @@
 echo '修改时区'
 #sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 echo '添加软件包'
-#git clone https://github.com/sirpdboy/sirpbboy-package ./package/diy
+git clone https://github.com/sirpdboy/sirpbboy-package ./package/diy
 svn co https://github.com/siropboy/luci-app-vssr-plus/trunk/ ./package/luci-app-vssr-plus
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk  ./package/new/luci-app-vssr
 svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/lienol
-git clone -b 18.06 https://github.com/garypang13/luci-theme-edge.git package/luci-theme-edge
+#git clone -b 18.06 https://github.com/garypang13/luci-theme-edge.git package/luci-theme-edge
 #sed -i '$a\chdbits.co\n\www.cnscg.club\n\pt.btschool.club\n\et8.org\n\www.nicept.net\n\pthome.net\n\ourbits.club\n\pt.m-team.cc\n\hdsky.me\n\ccfbits.org' ./package/luci-app-passwall/root/usr/share/passwall/rules/direct_host
 #sed -i '$a\docker.com\n\docker.io' ./package/luci-app-passwall/root/usr/share/passwall/rules/proxy_host
 #sed -i '/global_rules/a option auto_update 1\n option week_update 0\n option time_update 5' ./package/luci-app-passwall/root/etc/config/passwall
@@ -25,14 +25,14 @@ rm -rf ./package/lean/v2ray-plugin
 rm -rf ./package/lean/luci-app-netdata
 rm -rf ./package/lean/luci-theme-opentomcat
 rm -rf ./package/diy/autocore
-rm -rf ./package/diy/default-settings
+# rm -rf ./package/diy/default-settings
 # rm -rf ./package/lean/autocore
-# rm -rf ./package/lean/default-settings
-rm -rf ./package/lean/luci-theme-opentomcat
+rm -rf ./package/lean/default-settings
+# rm -rf ./package/lean/luci-theme-opentomcat
 rm -rf ./feeds/packages/admin/netdata
 rm -rf ./feeds/packages/net/mwan3
 rm -rf ./feeds/packages/net/https-dns-proxy
-rm -rf ./feeds/packages/net/smartdns
+# rm -rf ./feeds/packages/net/smartdns
 # rm -rf ./feeds/packages/utils/ttyd
 # rm -rf ./lean/luci-app-ttyd/root/etc/init.d/ttyd
 sed -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
@@ -50,10 +50,10 @@ svn co https://github.com/siropboy/siropboy-package/trunk/netdata ./feeds/packag
 svn co https://github.com/siropboy/siropboy-package/trunk/luci-app-netdata ./package/lean/luci-app-netdata
 svn co https://github.com/siropboy/siropboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/new/smartdns
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome ./package/new/luci-app-adguardhome
-curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
-svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy feeds/packages/net/https-dns-proxy
-sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
-sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
-./scripts/feeds update -i
+# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
+# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome ./package/new/luci-app-adguardhome
+# curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
+# svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy feeds/packages/net/https-dns-proxy
+# sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
+# sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
+# ./scripts/feeds update -i
