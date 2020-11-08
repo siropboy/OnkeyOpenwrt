@@ -46,9 +46,9 @@ sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-ipv6-Mini/g' 
 echo "DISTRIB_REVISION='S$(TZ=UTC-8 date +%Y.%m.%d) ipv6-Mini'" > ./package/base-files/files/etc/openwrt_release1
 sed -i "s/bootstrap/edge/g" feeds/luci/modules/luci-base/root/etc/config/luci
 sed -i 's/bootstrap/edge/g' feeds/luci/collections/luci/Makefile
-svn co https://github.com/siropboy/siropboy-package/trunk/netdata ./feeds/packages/admin/netdata
-svn co https://github.com/siropboy/siropboy-package/trunk/luci-app-netdata ./package/lean/luci-app-netdata
-svn co https://github.com/siropboy/siropboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
+# svn co https://github.com/siropboy/siropboy-package/trunk/netdata ./feeds/packages/admin/netdata
+# svn co https://github.com/siropboy/siropboy-package/trunk/luci-app-netdata ./package/lean/luci-app-netdata
+# svn co https://github.com/siropboy/siropboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/new/smartdns
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome ./package/new/luci-app-adguardhome
