@@ -1,7 +1,7 @@
 echo '修改时区'
 #sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 echo '添加软件包'
-git clone https://github.com/sirpdboy/sirpbboy-package ./package/diy
+#git clone https://github.com/sirpdboy/sirpbboy-package ./package/diy
 svn co https://github.com/siropboy/luci-app-vssr-plus/trunk/luci-app-vssr-plus ./package/luci-app-vssr-plus
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk  ./package/new/luci-app-vssr
 svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
@@ -49,8 +49,9 @@ sed -i 's/bootstrap/edge/g' feeds/luci/collections/luci/Makefile
 svn co https://github.com/siropboy/siropboy-package/trunk/netdata ./feeds/packages/admin/netdata
 svn co https://github.com/siropboy/siropboy-package/trunk/luci-app-netdata ./package/lean/luci-app-netdata
 svn co https://github.com/siropboy/siropboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/new/smartdns
+#svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/new/smartdns
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome ./package/new/luci-app-adguardhome
 curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
 svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy feeds/packages/net/https-dns-proxy
 sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
