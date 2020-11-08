@@ -52,4 +52,6 @@ svn co https://github.com/siropboy/siropboy-package/trunk/mwan3 ./feeds/packages
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/new/smartdns
 curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
 svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy feeds/packages/net/https-dns-proxy
+sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
+sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
 ./scripts/feeds update -i
