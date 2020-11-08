@@ -116,7 +116,7 @@ jobs:
           mkdir -p ./mini/package
           cp -rf $(find ./openwrt/bin/packages/ -type f -name "*.ipk") ./mini/package
           find ./openwrt/bin/targets/ -name "*combined*img*" | xargs -i mv -f {} ./mini/firmware
-          cd ./openwrt/mini/firmware
+          cd ./mini/firmware
           gzip *.img
     - name: 上传固件
       uses: actions/upload-artifact@main
