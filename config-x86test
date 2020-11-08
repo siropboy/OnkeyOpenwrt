@@ -7,7 +7,6 @@ CONFIG_PACKAGE_ntfs-3g=y
 CONFIG_PACKAGE_kmod-fs-ext4=y
 CONFIG_PACKAGE_kmod-fs-ext3=y
 CONFIG_PACKAGE_kmod-fs-ntfs=y
-CONFIG_PACKAGE_kmod-fs-squashfs=y
 CONFIG_PACKAGE_autosamba=y
 # CONFIG_PACKAGE_luci-app-samba is not set
 CONFIG_PACKAGE_luci-app-cifsd=y
@@ -19,14 +18,14 @@ CONFIG_PACKAGE_luci-app-nlbwmon=y
 CONFIG_PACKAGE_luci-app-wrtbwmon-pd=n
 # CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set
 CONFIG_PACKAGE_luci-app-vsftpd=y
-CONFIG_PACKAGE_luci-app-sfe=y
+# CONFIG_PACKAGE_luci-app-sfe is not set
 # CONFIG_PACKAGE_luci-app-autoreboot is not set
-# CONFIG_PACKAGE_luci-app-flowoffload=n
+CONFIG_PACKAGE_luci-app-flowoffload=y
 # CONFIG_PACKAGE_luci-app-minidlna is not set
 # CONFIG_PACKAGE_luci-app-adbyby-plus=n
 # CONFIG_PACKAGE_luci-app-unblockmusic is not set
 CONFIG_PACKAGE_luci-app-mwan3=y
-CONFIG_PACKAGE_luci-app-adguardhome=n
+CONFIG_PACKAGE_luci-app-adguardhome=y
 CONFIG_PACKAGE_luci-app-advanced=y
 CONFIG_PACKAGE_luci-app-autopoweroff=y
 # CONFIG_PACKAGE_luci-app-clash=n
@@ -64,8 +63,8 @@ CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
 CONFIG_PACKAGE_luci-app-smartdns=n
 CONFIG_PACKAGE_luci-app-syncdial=y
 CONFIG_PACKAGE_luci-app-ttyd=y
-CONFIG_PACKAGE_luci-app-vssr=n
-CONFIG_PACKAGE_luci-app-vssr-plus=y
+CONFIG_PACKAGE_luci-app-vssr=y
+CONFIG_PACKAGE_luci-app-vssr-plus=n
 CONFIG_PACKAGE_luci-app-webadmin=y
 CONFIG_LUCI_LANG_en=y
 CONFIG_PACKAGE_luci-theme-argon_new=n
