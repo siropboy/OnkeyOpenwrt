@@ -79,6 +79,7 @@ jobs:
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         [ -e $DIY_SH ] && chmod +x $DIY_SH && cd openwrt && ../$DIY_SH
+        chmod -R 775 .
     - name: SSH连接
       uses: P3TERX/debugger-action@main
       if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
