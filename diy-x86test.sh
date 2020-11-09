@@ -22,16 +22,15 @@ rm -rf ./package/lean/luci-theme-argon
 rm -rf ./package/lean/trojan
 rm -rf ./package/lean/v2ray
 rm -rf ./package/lean/v2ray-plugin
-rm -rf ./package/lean/luci-app-netdata
-rm -rf ./package/lean/luci-theme-opentomcat
 rm -rf ./package/diy/autocore
 # rm -rf ./package/diy/default-settings
 # rm -rf ./package/lean/autocore
 rm -rf ./package/lean/default-settings
-# rm -rf ./package/lean/luci-theme-opentomcat
-rm -rf ./feeds/packages/admin/netdata
-rm -rf ./feeds/packages/net/mwan3
-rm -rf ./feeds/packages/net/https-dns-proxy
+rm -rf ./package/lean/luci-app-netdata &&svn co https://github.com/siropboy/siropboy-package/trunk/luci-app-netdata ./package/lean/luci-app-netdata
+rm -rf ./package/lean/luci-theme-opentomcat
+rm -rf ./feeds/packages/admin/netdata&&svn co https://github.com/siropboy/siropboy-package/trunk/netdata ./feeds/packages/admin/netdata
+rm -rf ./feeds/packages/net/mwan3 &&svn co https://github.com/siropboy/siropboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
+rm -rf ./feeds/packages/net/https-dns-proxy &&svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy feeds/packages/net/https-dns-proxy
 # rm -rf ./feeds/packages/net/smartdns
 # rm -rf ./feeds/packages/utils/ttyd
 # rm -rf ./lean/luci-app-ttyd/root/etc/init.d/ttyd
@@ -46,14 +45,10 @@ sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-ipv6-Mini/g' 
 echo "DISTRIB_REVISION='S$(TZ=UTC-8 date +%Y.%m.%d) ipv6-Mini'" > ./package/base-files/files/etc/openwrt_release1
 sed -i "s/bootstrap/edge/g" feeds/luci/modules/luci-base/root/etc/config/luci
 sed -i 's/bootstrap/edge/g' feeds/luci/collections/luci/Makefile
-# svn co https://github.com/siropboy/siropboy-package/trunk/netdata ./feeds/packages/admin/netdata
-# svn co https://github.com/siropboy/siropboy-package/trunk/luci-app-netdata ./package/lean/luci-app-netdata
-# svn co https://github.com/siropboy/siropboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/new/smartdns
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome ./package/new/luci-app-adguardhome
 # curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
-# svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy feeds/packages/net/https-dns-proxy
 # sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
 # sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
 # ./scripts/feeds update -i
