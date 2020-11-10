@@ -46,4 +46,4 @@ sed -i 's/bootstrap/edge/g' feeds/luci/collections/luci/Makefile
 # curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
 # sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
 # sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
-# ./scripts/feeds update -i
+./scripts/feeds update -i
