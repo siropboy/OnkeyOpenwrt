@@ -2,7 +2,7 @@ echo '修改时区'
 #sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 echo '添加软件包'
 git clone https://github.com/sirpdboy/sirpbboy-package ./package/diy
-svn co https://github.com/siropboy/luci-app-vssr-plus/trunk/ ./package/luci-app-vssr-plus
+# svn co https://github.com/siropboy/luci-app-vssr-plus/trunk/ ./package/luci-app-vssr-plus
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk  ./package/new/luci-app-vssr
 svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/lienol
@@ -16,6 +16,9 @@ rm -rf ./package/lean/trojan
 rm -rf ./package/lean/v2ray
 rm -rf ./package/lean/v2ray-plugin
 rm -rf ./package/diy/autocore
+rm -rf ./package/diy/luci-app-netdata
+rm -rf ./package/diy/mwan3
+rm -rf ./package/diy/netdata
 # rm -rf ./package/diy/default-settings
 # rm -rf ./package/lean/autocore
 rm -rf ./package/lean/default-settings
