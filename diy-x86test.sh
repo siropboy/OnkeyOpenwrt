@@ -42,6 +42,7 @@ sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv6-Mini/g' 
 echo "DISTRIB_REVISION='S$(TZ=UTC-8 date +%Y.%m.%d) Ipv6-Mini'" > ./package/base-files/files/etc/openwrt_release1
 sed -i "s/bootstrap/edge/g" feeds/luci/modules/luci-base/root/etc/config/luci
 sed -i 's/bootstrap/edge/g' feeds/luci/collections/luci/Makefile
+sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/new/smartdns
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/adguardhome ./package/new/adguardhome
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome ./package/new/luci-app-adguardhome
