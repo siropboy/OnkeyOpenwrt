@@ -17,8 +17,8 @@ on:
 #      - main
 #    paths:
 #      - '5.config'
-  schedule:
-    - cron: 0 22 */5 * * 
+#   schedule:
+#     - cron: 0 22 */5 * * 
   watch:
     types: started
 
